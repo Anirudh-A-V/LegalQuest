@@ -1,6 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://deroewyq6lilk"]
+[gd_scene load_steps=9 format=3 uid="uid://cyph3c41nw5oq"]
 
 [ext_resource type="Texture2D" uid="uid://y0h0l5lmgwb5" path="res://wall and floor tiles.png" id="1_0vfwa"]
+[ext_resource type="Script" path="res://scripts/office.gd" id="1_xpth3"]
+[ext_resource type="PackedScene" uid="uid://e80a47xf1t3a" path="res://player.tscn" id="2_6xxtr"]
 [ext_resource type="Texture2D" uid="uid://keqgjnts35is" path="res://furniture update.png" id="2_lpjro"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qd8ek"]
@@ -722,6 +724,13 @@ sources/0 = SubResource("TileSetAtlasSource_awyvo")
 [node name="Office" type="Node2D"]
 position = Vector2(2.08165e-12, 237)
 scale = Vector2(2, 2)
+script = ExtResource("1_xpth3")
+
+[node name="Player" parent="." instance=ExtResource("2_6xxtr")]
+z_index = 1
+position = Vector2(279, 168)
+scale = Vector2(1, 1)
+up_direction = Vector2(0, 1)
 
 [node name="Background" type="TileMap" parent="."]
 scale = Vector2(1.03338, 1.00675)

@@ -1,5 +1,6 @@
-[gd_scene load_steps=52 format=3 uid="uid://e80a47xf1t3a"]
+[gd_scene load_steps=53 format=3 uid="uid://e80a47xf1t3a"]
 
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_86cpr"]
 [ext_resource type="Texture2D" uid="uid://dmdcxciqikg6l" path="res://assets/player/detective.png" id="1_u5m82"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jifao"]
@@ -294,7 +295,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"move_down",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -323,7 +324,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"move_left",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -352,7 +353,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"move_right",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -381,12 +382,13 @@ animations = [{
 }],
 "loop": true,
 "name": &"move_up",
-"speed": 5.0
+"speed": 6.0
 }]
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(330, 330)
-scale = Vector2(3, 3)
+scale = Vector2(2, 2)
+script = ExtResource("1_86cpr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.5)
@@ -394,5 +396,4 @@ shape = SubResource("RectangleShape2D_jifao")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_syx2y")
-animation = &"idle_front"
-frame_progress = 0.664421
+animation = &"move_down"
